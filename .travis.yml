@@ -1,0 +1,13 @@
+# https://docs.travis-ci.com/user/languages/javascript-with-node.js/
+# https://docs.travis-ci.com/user/deployment/pages/
+language: node_js
+node_js: 10
+script: npm run build
+deploy:
+  provaider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  kepp_history: true
+on:
+  branch: master
